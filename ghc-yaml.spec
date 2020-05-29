@@ -6,66 +6,71 @@
 Summary:	Support for parsing and rendering YAML documents
 Summary(pl.UTF-8):	Analiza i renderowanie dokumentów YAML
 Name:		ghc-%{pkgname}
-Version:	0.8.5.2
+Version:	0.11.4.0
 Release:	1
 License:	BSD
 Group:		Development/Languages
 #Source0Download: http://hackage.haskell.org/package/yaml
 Source0:	http://hackage.haskell.org/package/%{pkgname}-%{version}/%{pkgname}-%{version}.tar.gz
-# Source0-md5:	9b4757fd010d6ae2d2ba27275a3a619e
+# Source0-md5:	18322a12aa993871315c33dbe7529026
 URL:		http://hackage.haskell.org/package/yaml
 BuildRequires:	ghc >= 6.12.3
-BuildRequires:	ghc-aeson >= 0.5
-BuildRequires:	ghc-attoparsec
-BuildRequires:	ghc-base >= 4
-BuildRequires:	ghc-base < 5
+BuildRequires:	ghc-aeson >= 0.11
+BuildRequires:	ghc-attoparsec >= 0.11.3.0
+BuildRequires:	ghc-base >= 4.9.1
 BuildRequires:	ghc-bytestring >= 0.9.1.4
-BuildRequires:	ghc-conduit >= 0.5
-BuildRequires:	ghc-conduit < 1.1
+BuildRequires:	ghc-conduit >= 1.2.8
 BuildRequires:	ghc-containers
+BuildRequires:	ghc-directory
+BuildRequires:	ghc-filepath
+BuildRequires:	ghc-libyaml >= 0.1
+BuildRequires:	ghc-mtl
 BuildRequires:	ghc-resourcet >= 0.3
-BuildRequires:	ghc-resourcet < 0.5
+BuildRequires:	ghc-scientific >= 0.3
+BuildRequires:	ghc-template-haskell
 BuildRequires:	ghc-text
 BuildRequires:	ghc-transformers >= 0.1
-BuildRequires:	ghc-transformers < 0.4
 BuildRequires:	ghc-unordered-containers
 BuildRequires:	ghc-vector
 %if %{with prof}
 BuildRequires:	ghc-prof >= 6.12.3
-BuildRequires:	ghc-aeson-prof >= 0.5
-BuildRequires:	ghc-attoparsec-prof
-BuildRequires:	ghc-base-prof >= 4
-BuildRequires:	ghc-base-prof < 5
+BuildRequires:	ghc-aeson-prof >= 0.11
+BuildRequires:	ghc-attoparsec-prof >= 0.11.3.0
+BuildRequires:	ghc-base-prof >= 4.9.1
 BuildRequires:	ghc-bytestring-prof >= 0.9.1.4
-BuildRequires:	ghc-conduit-prof >= 0.5
-BuildRequires:	ghc-conduit-prof < 1.1
+BuildRequires:	ghc-conduit-prof >= 1.2.8
 BuildRequires:	ghc-containers-prof
+BuildRequires:	ghc-directory-prof
+BuildRequires:	ghc-filepath-prof
+BuildRequires:	ghc-libyaml-prof >= 0.1
+BuildRequires:	ghc-mtl-prof
 BuildRequires:	ghc-resourcet-prof >= 0.3
-BuildRequires:	ghc-resourcet-prof < 0.5
+BuildRequires:	ghc-scientific-prof >= 0.3
+BuildRequires:	ghc-template-haskell-prof
 BuildRequires:	ghc-text-prof
 BuildRequires:	ghc-transformers-prof >= 0.1
-BuildRequires:	ghc-transformers-prof < 0.4
 BuildRequires:	ghc-unordered-containers-prof
 BuildRequires:	ghc-vector-prof
 %endif
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.608
-BuildRequires:	yaml-devel >= 0.1.2
 Requires(post,postun):	/usr/bin/ghc-pkg
 %requires_eq	ghc
-Requires:	ghc-aeson >= 0.5
-Requires:	ghc-attoparsec
-Requires:	ghc-base >= 4
-Requires:	ghc-base < 5
+Requires:	ghc-aeson >= 0.11
+Requires:	ghc-attoparsec >= 0.11.3.0
+Requires:	ghc-base >= 4.9.1
 Requires:	ghc-bytestring >= 0.9.1.4
-Requires:	ghc-conduit >= 0.5
-Requires:	ghc-conduit < 1.1
+Requires:	ghc-conduit >= 1.2.8
 Requires:	ghc-containers
+Requires:	ghc-directory
+Requires:	ghc-filepath
+Requires:	ghc-libyaml >= 0.1
+Requires:	ghc-mtl
 Requires:	ghc-resourcet >= 0.3
-Requires:	ghc-resourcet < 0.5
+Requires:	ghc-scientific >= 0.3
+Requires:	ghc-template-haskell
 Requires:	ghc-text
 Requires:	ghc-transformers >= 0.1
-Requires:	ghc-transformers < 0.4
 Requires:	ghc-unordered-containers
 Requires:	ghc-vector
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -87,19 +92,22 @@ Summary:	Profiling %{pkgname} library for GHC
 Summary(pl.UTF-8):	Biblioteka profilująca %{pkgname} dla GHC
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	ghc-aeson-prof >= 0.5
-Requires:	ghc-attoparsec-prof
-Requires:	ghc-base-prof >= 4
-Requires:	ghc-base-prof < 5
+Requires:	ghc-prof >= 6.12.3
+Requires:	ghc-aeson-prof >= 0.11
+Requires:	ghc-attoparsec-prof >= 0.11.3.0
+Requires:	ghc-base-prof >= 4.9.1
 Requires:	ghc-bytestring-prof >= 0.9.1.4
-Requires:	ghc-conduit-prof >= 0.5
-Requires:	ghc-conduit-prof < 1.1
+Requires:	ghc-conduit-prof >= 1.2.8
 Requires:	ghc-containers-prof
+Requires:	ghc-directory-prof
+Requires:	ghc-filepath-prof
+Requires:	ghc-libyaml-prof >= 0.1
+Requires:	ghc-mtl-prof
 Requires:	ghc-resourcet-prof >= 0.3
-Requires:	ghc-resourcet-prof < 0.5
+Requires:	ghc-scientific-prof >= 0.3
+Requires:	ghc-template-haskell-prof
 Requires:	ghc-text-prof
 Requires:	ghc-transformers-prof >= 0.1
-Requires:	ghc-transformers-prof < 0.4
 Requires:	ghc-unordered-containers-prof
 Requires:	ghc-vector-prof
 
@@ -128,7 +136,7 @@ Dokumentacja w formacie HTML dla pakietu ghc %{pkgname}.
 %build
 runhaskell Setup.lhs configure -v2 \
 	%{?with_prof:--enable-library-profiling} \
-	--flags="system-libyaml" \
+	--flags="-no-exe" \
 	--prefix=%{_prefix} \
 	--libdir=%{_libdir} \
 	--libexecdir=%{_libexecdir} \
@@ -165,21 +173,28 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc LICENSE
 %attr(755,root,root) %{_bindir}/yaml2json
+%attr(755,root,root) %{_bindir}/json2yaml
 %{_libdir}/%{ghcdir}/package.conf.d/%{pkgname}.conf
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}
-%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/HSyaml-%{version}.o
-%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSyaml-%{version}.a
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSyaml-%{version}-*.so
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSyaml-%{version}-*.a
+%exclude %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSyaml-%{version}-*_p.a
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/*.hi
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/*.dyn_hi
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data
-%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Yaml.hi
-%dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Text
-%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Text/Libyaml.hi
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/*.hi
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/*.dyn_hi
+%dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Yaml
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Yaml/*.hi
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Yaml/*.dyn_hi
 
 %if %{with prof}
 %files prof
 %defattr(644,root,root,755)
-%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSyaml-%{version}_p.a
-%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Yaml.p_hi
-%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Text/Libyaml.p_hi
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSyaml-%{version}-*_p.a
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/*.p_hi
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/*.p_hi
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Yaml/*.p_hi
 %endif
 
 %files doc
