@@ -7,7 +7,7 @@ Summary:	Support for parsing and rendering YAML documents
 Summary(pl.UTF-8):	Analiza i renderowanie dokumentów YAML
 Name:		ghc-%{pkgname}
 Version:	0.11.4.0
-Release:	2
+Release:	3
 License:	BSD
 Group:		Development/Languages
 #Source0Download: http://hackage.haskell.org/package/yaml
